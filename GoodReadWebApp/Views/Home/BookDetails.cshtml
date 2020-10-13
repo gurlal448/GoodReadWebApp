@@ -1,0 +1,27 @@
+﻿@model GoodReadWebApp.Models.Book
+
+@{
+    ViewData["Title"] = "BookDetails";
+    var bookitem = Model;
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">@bookitem.BookTitle</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3>No of Pages : @bookitem.Pages</h3>
+        <h3>Authors: @bookitem.Authors </h3>
+        <h5>Book Description :</h5>
+        <p>@bookitem.Description</p>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <img class="card-img-top" src="../../bookphotos/@bookitem.BookID@bookitem.Extension" alt="Card image">
+            
+        </div>
+    </div>
+
+</div>

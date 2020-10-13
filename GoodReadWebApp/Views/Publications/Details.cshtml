@@ -1,0 +1,23 @@
+﻿@model GoodReadWebApp.Models.Publication
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Publication Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PublicationName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PublicationName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit"  asp-route-id="@Model.PublicationID">Edit This Publication</a> |
+    <a asp-action="Index">View All Publication</a>
+</div>

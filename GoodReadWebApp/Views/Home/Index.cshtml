@@ -1,0 +1,21 @@
+﻿@model IEnumerable<GoodReadWebApp.Models.BookType>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To Good Reads</h1>
+</div>
+<div class="card-columns">
+    @foreach (var item in Model)
+    {
+        <div class="card bg-warning">
+            <div class="card-body text-center">
+                <p class="card-text">
+                    <a class="font-weight-bolder" asp-action="ViewBookByType" asp-route-id="@item.TypeID">@item.TypeName</a>
+                </p>
+            </div>
+        </div>
+    }
+</div>
+

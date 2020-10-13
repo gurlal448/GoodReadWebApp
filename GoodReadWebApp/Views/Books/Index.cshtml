@@ -1,0 +1,54 @@
+﻿@model IEnumerable<GoodReadWebApp.Models.Book>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>View All Book</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Add New Book</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pages)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Authors)
+            </th>
+
+            <th> Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pages)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Authors)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn" asp-route-id="@item.BookID">Edit</a> |
+                <a asp-action="Details" class="btn" asp-route-id="@item.BookID">Details</a> |
+                <a asp-action="Delete" class="btn" asp-route-id="@item.BookID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
